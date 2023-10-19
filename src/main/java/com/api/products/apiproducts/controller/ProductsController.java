@@ -21,8 +21,13 @@ public class ProductsController {
   private ProductsModel productsModel;
 
 
+  // @Autowired
+  // public ProductsController(ProductsModel productsModel) {
+  //   this.productsModel = productsModel;
+  // }
+
   @Autowired
-  public ProductsController(ProductsModel productsModel) {
+  public void setProductsModel(ProductsModel productsModel) {
     this.productsModel = productsModel;
   }
 
