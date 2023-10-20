@@ -35,6 +35,7 @@ public class ProductsController {
 
   @Autowired
   public void setProductsModel(@Qualifier("productUser") ProductsModel productsModel) {
+      System.out.println("In constructor: " + getClass().getName());
     this.productsModel = productsModel;
   }
 
