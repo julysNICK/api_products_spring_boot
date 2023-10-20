@@ -35,15 +35,23 @@ public class ProductsController {
   // }
 
 
+  // @Autowired
+  // public void setProductsModel(@Qualifier("productUser") ProductsModel productsModelUser, @Qualifier("productAdmin") ProductsModel productsModelAdmin) {
+  //     System.out.println("In constructor: " + getClass().getName());
+  //   this.productsModel = productsModelUser;
+
+  //   this.productsModelAdmin = productsModelAdmin;
+  // }
+
+
+
   @Autowired
-  public void setProductsModel(@Qualifier("productUser") ProductsModel productsModelUser, @Qualifier("productAdmin") ProductsModel productsModelAdmin) {
+  public void setProductsModel(@Qualifier("productGeral") ProductsModel productsModelAdmin) {
       System.out.println("In constructor: " + getClass().getName());
-    this.productsModel = productsModelUser;
+    this.productsModel = productsModelAdmin;
 
     this.productsModelAdmin = productsModelAdmin;
   }
-
-
 
   // @Autowired
   // public ProductsController(@Qualifier("productAdmin") ProductsModel productsModel) {

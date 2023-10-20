@@ -1,11 +1,6 @@
 package com.api.products.apiproducts.controller;
 
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
 
 /**
  * ProductAdmin
@@ -18,15 +13,15 @@ public class ProductAdmin implements ProductsModel {
   }
 
 
-  @PostConstruct
-  public void init() {
-      System.out.println("In init: " + getClass().getName());
-  }
+  // @PostConstruct
+  // public void init() {
+  //     System.out.println("In init: " + getClass().getName());
+  // }
 
-  @PreDestroy
-  public void destroy() {
-      System.out.println("In destroy: " + getClass().getName());
-  }
+  // @PreDestroy
+  // public void destroy() {
+  //     System.out.println("In destroy: " + getClass().getName());
+  // }
 
   @Override
   public String getNameProduct() {
