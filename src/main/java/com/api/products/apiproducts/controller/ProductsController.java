@@ -21,6 +21,8 @@ public class ProductsController {
 
   private ProductsModel productsModel;
 
+  private ProductsModel productsModelAdmin;
+
 
   // @Autowired
   // public ProductsController(ProductsModel productsModel) {
@@ -34,9 +36,11 @@ public class ProductsController {
 
 
   @Autowired
-  public void setProductsModel(@Qualifier("productUser") ProductsModel productsModel) {
+  public void setProductsModel(@Qualifier("productUser") ProductsModel productsModelUser, @Qualifier("productAdmin") ProductsModel productsModelAdmin) {
       System.out.println("In constructor: " + getClass().getName());
-    this.productsModel = productsModel;
+    this.productsModel = productsModelUser;
+
+    this.productsModelAdmin = productsModelAdmin;
   }
 
 
@@ -66,6 +70,11 @@ public class ProductsController {
   @GetMapping("/list")
   public String list() {
     return "List of products";
+  }
+
+  @GetMapping("/check")
+  public String check() {
+    return "Comparing beans: productAdmin == productUser: " + (productsModelAdmin == productsModel);
   }
   
 }
